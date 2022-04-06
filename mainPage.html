@@ -6,7 +6,6 @@
     <title>Main Page</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <link rel="stylesheet" type="text/css" href="css/footerStyle.css" />
     <link rel="stylesheet" type="text/css" href="css/headerStyle.css" />
 </head>
 
@@ -16,11 +15,9 @@
         <h3>Logo</h3>
 
         <p class="center">
-            <input class="search" type="text" name="name" placeholder="Search by item name">
-            <select class="tagName" name="tagName">
-                <option value="">All categories</option>
-                <option value="film">Film</option>                               
-        </select>
+            <input type="txt" id="searchbar" onkeyup="inputSearch()" name="search" placeholder="Search by item name" class="search">
+
+            </select>
         </p>
 
         <p>
@@ -38,17 +35,31 @@
 
     <main>
         <nav id="nav">
-            <div class="box">
-
+            <div class="inBox">
+                <button onclick="filterSelection('all')"> All</button>
             </div>
-
+            <div class="inBox">
+                <button onclick="filterSelection('relax')"> Relax</button>
+            </div>
+            <div class="inBox">
+                <button onclick="filterSelection('sport')"> Sport</button>
+            </div>
+            <div class="inBox">
+                <button onclick="filterSelection('beauty')"> Beauty</button>
+            </div>
+            <div class="inBox">
+                <button onclick="filterSelection('film')"> Film</button>
+            </div>
+            <div class="inBox">
+                <button onclick="filterSelection('funny')"> Funny</button>
+            </div>
         </nav>
         <br>
         <div class="flex_container"></div>
     </main>
 
-    <button id="upButton" onclick="upFunction()" title="Up">Up</button>
-    <button id="backButton" onclick="backFunction()" title="Back">Back</button>
+    <button class="upButton" onclick="upFunction()" title="Up">Up</button>
+    <button class="lastPositionButton" onclick="backFunction()" title="Last position">Back</button>
 
     <script type="text/javascript" src="js/mainPage.js"></script>
 </body>
