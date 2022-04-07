@@ -51,12 +51,6 @@ function createContainer() {
     </table>`;
 
     flexContainer.appendChild(container);
-    if (selectTag !== "all") {
-        filterSelection(selectTag);
-    }
-    if (document.getElementById('searchbar').value.toLowerCase() !== '') {
-        inputSearch();
-    }
 }
 
 
@@ -122,12 +116,13 @@ function inputSearch() {
     let name, desc, tag;
     for (let i = 0; i < container.length; i++) {
 
+        tag = container[i].getElementsByClassName('tag');
         name = container[i].getElementsByClassName('name');
         desc = container[i].getElementsByClassName('description');
-        tag = container[i].getElementsByClassName('tag');
 
-        if (!(name[0].innerHTML.toLowerCase().includes(input) || desc[0].innerHTML.toLowerCase().includes(input) ||
-                tag[0].innerHTML.toLowerCase().includes(input))) {
+
+        if (!(tag[0].innerHTML.toLowerCase().includes(input) || desc[0].innerHTML.toLowerCase().includes(input) ||
+                name[0].innerHTML.toLowerCase().includes(input))) {
             container[i].style.display = "none";
         } else {
             container[i].style.display = "";
